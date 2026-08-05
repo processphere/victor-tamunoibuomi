@@ -15,6 +15,28 @@ export const content = {
   // Drop your photo at public/photo.png (square crop works best), then set:
   photo: "/photo.png",
 
+  status: "Available for new opportunities",
+
+  heroFacts: [
+    { label: "Email", value: "processphere@gmail.com", href: "mailto:processphere@gmail.com" },
+    { label: "Location", value: "Remote, worldwide", href: "" },
+    { label: "Focus", value: "Full-Stack Web", href: "" },
+    { label: "Status", value: "Open to work", href: "" },
+  ],
+
+  sectionDescriptions: {
+    about:
+      "A quick introduction to who I am, how I work, and the problems I like to solve.",
+    skills:
+      "The tools I reach for when designing, building, and shipping products end to end.",
+    projects:
+      "A few things I've built recently. The rest is on GitHub.",
+    experience:
+      "Where I&apos;ve learned and worked so far — replace these with your real roles.",
+    contact:
+      "Have an idea, a project, or a role in mind? My inbox is always open.",
+  },
+
   about: {
     intro:
       "I'm a full-stack developer focused on building products end-to-end. I care about clean code, thoughtful design, and shipping experiences that feel effortless on the inside and look sharp on the outside.",
@@ -28,17 +50,37 @@ export const content = {
   skills: [
     {
       group: "Frontend",
+      icon: "react",
       items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML / CSS"],
     },
     {
       group: "Backend",
+      icon: "server",
       items: ["Node.js", "Express", "REST APIs", "PostgreSQL", "MongoDB"],
     },
     {
-      group: "Tools",
-      items: ["Git / GitHub", "Vercel", "Figma", "Postman", "Linux"],
+      group: "Data & APIs",
+      icon: "database",
+      items: ["MongoDB", "PostgreSQL", "Redis", "REST", "GraphQL"],
+    },
+    {
+      group: "Dev Tools",
+      icon: "tools",
+      items: ["Git / GitHub", "Vercel", "Postman", "Figma", "Linux"],
+    },
+    {
+      group: "Best Practices",
+      icon: "shield",
+      items: ["Responsive Design", "Accessibility", "SEO", "Performance"],
+    },
+    {
+      group: "Currently Exploring",
+      icon: "sparkles",
+      items: ["Real-time apps", "WebSockets", "Serverless", "Three.js"],
     },
   ],
+
+  exploring: ["Real-time apps", "WebSockets", "Edge compute"],
 
   projects: [
     {
@@ -49,6 +91,7 @@ export const content = {
       liveUrl: "",
       githubUrl: "https://github.com/processphere",
       emoji: "01",
+      featured: true,
     },
     {
       title: "Project Two",
@@ -58,6 +101,7 @@ export const content = {
       liveUrl: "",
       githubUrl: "https://github.com/processphere",
       emoji: "02",
+      featured: true,
     },
     {
       title: "Project Three",
@@ -67,6 +111,47 @@ export const content = {
       liveUrl: "",
       githubUrl: "https://github.com/processphere",
       emoji: "03",
+      featured: false,
+    },
+    {
+      title: "Project Four",
+      description:
+        "Replace me with a real project. Rename, describe, and drop in a live link and the source repo.",
+      tech: ["React", "Node.js", "MongoDB"],
+      liveUrl: "",
+      githubUrl: "https://github.com/processphere",
+      emoji: "04",
+      featured: false,
+    },
+  ],
+
+  experience: [
+    {
+      title: "Placeholder Role",
+      org: "Company / Client",
+      period: "2025 — Present",
+      type: "Work",
+      description:
+        "replace.me — Add a short line about what you built, owned, or shipped here.",
+      tech: ["React", "Next.js"],
+    },
+    {
+      title: "Placeholder Role",
+      org: "Company / Client",
+      period: "2024 — 2025",
+      type: "Work",
+      description:
+        "replace.me — Add a short line about what you built, owned, or shipped here.",
+      tech: ["Node.js", "Express"],
+    },
+    {
+      title: "Placeholder Degree / Bootcamp",
+      org: "Institution",
+      period: "2023 — 2024",
+      type: "Education",
+      description:
+        "replace.me — Course, focus area, or highlight of your training.",
+      tech: [],
     },
   ],
 
@@ -74,6 +159,7 @@ export const content = {
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
+    { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" },
   ],
 };

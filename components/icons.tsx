@@ -58,3 +58,174 @@ export function ArrowUpRightIcon({ className }: IconProps) {
     </svg>
   );
 }
+
+export function ArrowUpIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  );
+}
+
+export function ReactIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      aria-hidden="true"
+      className={className}
+    >
+      <circle cx="12" cy="12" r="2.1" />
+      <ellipse cx="12" cy="12" rx="10" ry="4.2" />
+      <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)" />
+      <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)" />
+    </svg>
+  );
+}
+
+export function ServerIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+      className={className}
+    >
+      <rect x="3" y="4" width="18" height="7" rx="2" />
+      <rect x="3" y="13" width="18" height="7" rx="2" />
+      <path d="M7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h6" />
+    </svg>
+  );
+}
+
+export function DatabaseIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+      className={className}
+    >
+      <ellipse cx="12" cy="5" rx="8" ry="3" />
+      <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5" />
+      <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
+    </svg>
+  );
+}
+
+export function ToolsIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M14.7 6.3a4.5 4.5 0 0 0 6 6L13 20a2 2 0 0 1-2.8-2.8l7.7-7.7a4 4 0 0 0-3.2-3.2l-3 3-2-2 3-3Z" />
+      <path d="m3 21 5-5" />
+    </svg>
+  );
+}
+
+export function ShieldIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3Z" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  );
+}
+
+export function SparklesIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M12 3v6M12 15v6M3 12h6M15 12h6" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
+
+export function PinIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z" />
+      <circle cx="12" cy="10" r="2.5" />
+    </svg>
+  );
+}
+
+export function FocusIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+      className={className}
+    >
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
+
+export function CheckIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="m5 13 4 4L19 7" />
+    </svg>
+  );
+}
+
+export const skillIcons: Record<string, (p: IconProps) => React.ReactNode> = {
+  react: ReactIcon,
+  server: ServerIcon,
+  database: DatabaseIcon,
+  tools: ToolsIcon,
+  shield: ShieldIcon,
+  sparkles: SparklesIcon,
+};
