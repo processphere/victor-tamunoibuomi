@@ -46,7 +46,7 @@ export function ProjectGalleryModal({
 
   return (
     <motion.div
-      className="fixed inset-0 z-[80] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm sm:p-8"
+      className="fixed inset-0 z-[80] flex items-center justify-center bg-black/80 backdrop-blur-sm sm:p-8"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -57,7 +57,7 @@ export function ProjectGalleryModal({
       aria-label={`${project.title} gallery`}
     >
       <motion.div
-        className="relative flex max-h-full w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 shadow-2xl"
+        className="relative flex h-full w-full flex-col overflow-hidden rounded-none border-white/10 bg-zinc-950 shadow-2xl sm:max-h-full sm:max-w-4xl sm:rounded-2xl"
         initial={{ opacity: 0, scale: 0.96, y: 12 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.96, y: 12 }}
@@ -82,7 +82,7 @@ export function ProjectGalleryModal({
           </button>
         </div>
 
-        <div className="min-h-0 flex-1 space-y-6 overflow-y-auto p-5 sm:p-6">
+        <div className="min-h-0 flex-1 space-y-6 overflow-y-auto p-5 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 sm:p-6">
           {images.map((src, i) => (
             <figure key={src}>
               {project.captions?.[i] && (

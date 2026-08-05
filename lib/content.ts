@@ -87,14 +87,20 @@ export const content = {
       featured: true,
     },
     {
-      title: "Project Two",
+      title: "Hall Clone",
       description:
-        "Replace me with a real project. Rename, describe, and drop in a live link and the source repo.",
-      tech: ["React", "Node.js", "Express", "MongoDB"],
+        "A social media mobile app built with React Native and Expo — profiles, feeds, and real-time interactions in a native experience.",
+      tech: ["React Native", "Expo", "Node.js", "MongoDB"],
       liveUrl: "",
       githubUrl: "https://github.com/processphere",
-      image: "", // e.g. "/images/project-two.png"
-      screenshots: [], // e.g. ["/images/project-two-b.png"]
+      image: "/images/project-2a.png", // e.g. "/images/project-two.png"
+      screenshots: [
+        "/images/project-2b.png",
+        "/images/project-2c.png",
+        "/images/project-2d.png",
+        "/images/project-2e.png",
+        "/images/project-2f.png",
+      ], // e.g. ["/images/project-two-b.png"]
       captions: [],
       emoji: "02",
       featured: true,
