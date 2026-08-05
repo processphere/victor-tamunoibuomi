@@ -14,6 +14,9 @@ export const content = {
   resumeUrl: "", // optional /resume.pdf in public/
   siteUrl: "https://victor-shadrach.vercel.app", // update after your Vercel deploy
 
+  // Nav/header avatar — placeholder until you add your own photo.
+  logo: "/images/header-logo.jpeg",
+
   // Drop your photo at public/images/photo.png (square crop works best), then set:
   photo: "/images/photo.png",
 

@@ -9,7 +9,7 @@ export function Nav() {
   const reduce = useReducedMotion();
   const [open, setOpen] = useState(false);
   const [photoOk, setPhotoOk] = useState(true);
-  const showPhoto = content.photo !== "" && photoOk;
+  const showPhoto = content.logo !== "" && photoOk;
 
   const close = () => setOpen(false);
 
@@ -29,10 +29,10 @@ export function Nav() {
         >
           {showPhoto ? (
             <Image
-              src={content.photo}
+              src={content.logo}
               alt=""
-              width={44}
-              height={44}
+              width={48}
+              height={48}
               onError={() => setPhotoOk(false)}
               className="h-10 w-10 shrink-0 rounded-full border border-white/10 object-cover sm:h-11 sm:w-11"
             />
