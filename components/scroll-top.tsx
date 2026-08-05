@@ -25,7 +25,7 @@ export function ScrollTopButton() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: reduce ? 0 : 16 }}
           transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-background/80 text-zinc-300 shadow-[0_8px_30px_rgba(0,0,0,0.5)] backdrop-blur-md transition-colors hover:border-accent/50 hover:text-accent"
+          className="fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-zinc-100 text-zinc-900 shadow-[0_8px_30px_rgba(0,0,0,0.5)] transition-colors hover:bg-accent"
         >
           <ArrowUpIcon className="h-4 w-4" />
         </motion.a>

@@ -1,5 +1,5 @@
 export const content = {
-  name: "Victor Tamunoibuomi",
+  name: "Victor Shadrach",
   firstName: "Victor",
   role: "Full-Stack Developer",
   tagline:
