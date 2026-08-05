@@ -35,7 +35,6 @@ export function TechMarquee() {
                 {item.label}
               </span>
             )}
-            <span className="text-accent/60">*</span>
           </span>
         ))}
       </div>

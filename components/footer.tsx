@@ -1,4 +1,7 @@
+"use client";
+
 import { content } from "@/lib/content";
+import { scrollToSection } from "@/lib/scroll";
 import { GitHubIcon, LinkedInIcon, MailIcon, FacebookIcon, ArrowUpIcon } from "@/components/icons";
 
 export function Footer() {
@@ -28,6 +31,10 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(link.href);
+                    }}
                     className="text-base text-zinc-300 transition-colors hover:text-accent"
                   >
                     {link.label}

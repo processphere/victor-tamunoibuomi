@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { content } from "@/lib/content";
+import { scrollToSection } from "@/lib/scroll";
 
 export function Nav() {
   const reduce = useReducedMotion();
@@ -24,11 +25,7 @@ export function Nav() {
   const go = (href: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setOpen(false);
-    const id = href.replace("#", "");
-    window.dispatchEvent(new CustomEvent("vv:open-accordion", { detail: id }));
-    window.setTimeout(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 120);
+    scrollToSection(href);
   };
 
   const avatarClass = scrolled
