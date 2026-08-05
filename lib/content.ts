@@ -70,12 +70,13 @@ export const content = {
 
   projects: [
     {
-      title: "Project One",
+      title: "Attendance System",
       description:
-        "Replace me with a real project. Describe what it does, who it's for, and the problem it solves in one or two lines.",
-      tech: ["Next.js", "TypeScript", "Tailwind", "PostgreSQL"],
+        "A check-in/check-out attendance system I built for my tech company — daily QR code generation and scanning, employee onboarding, and attendance reports.",
+      tech: ["Next.js", "TypeScript", "Node.js", "MongoDB"],
       liveUrl: "",
       githubUrl: "https://github.com/processphere",
+      image: "/images/project-1a.png",
       emoji: "01",
       featured: true,
     },
@@ -86,6 +87,7 @@ export const content = {
       tech: ["React", "Node.js", "Express", "MongoDB"],
       liveUrl: "",
       githubUrl: "https://github.com/processphere",
+      image: "", // e.g. "/images/project-two.png"
       emoji: "02",
       featured: true,
     },
@@ -96,6 +98,7 @@ export const content = {
       tech: ["Next.js", "Tailwind", "REST APIs"],
       liveUrl: "",
       githubUrl: "https://github.com/processphere",
+      image: "", // e.g. "/images/project-three.png"
       emoji: "03",
       featured: false,
     },
@@ -106,6 +109,7 @@ export const content = {
       tech: ["React", "Node.js", "MongoDB"],
       liveUrl: "",
       githubUrl: "https://github.com/processphere",
+      image: "", // e.g. "/images/project-four.png"
       emoji: "04",
       featured: false,
     },

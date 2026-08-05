@@ -17,13 +17,21 @@ export function Projects() {
             key={project.title}
             className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-white/[0.04]"
           >
-            <div className="relative flex aspect-[16/10] items-center justify-center border-b border-white/5 bg-gradient-to-br from-white/[0.04] to-transparent">
-              <span className="font-mono text-3xl text-zinc-700 transition-colors group-hover:text-accent/70">
-                {project.emoji}
-              </span>
+            <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden border-b border-white/5 bg-gradient-to-br from-white/[0.04] to-transparent">
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={`${project.title} screenshot`}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <span className="font-mono text-3xl text-zinc-700 transition-colors group-hover:text-accent/70">
+                  {project.emoji}
+                </span>
+              )}
               <span
                 aria-hidden="true"
-                className="absolute right-3 top-3 font-mono text-xs text-zinc-600"
+                className="absolute right-3 top-3 rounded-full bg-background/70 px-2 py-0.5 font-mono text-xs text-zinc-500 backdrop-blur-sm"
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
