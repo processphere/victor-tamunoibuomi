@@ -9,7 +9,7 @@ import {
   FocusIcon,
 } from "@/components/icons";
 import { HeroItem } from "@/components/anim/hero-enter";
-import { NameFx } from "@/components/anim/name-fx";
+import { GlowOverlay } from "@/components/anim/glow-overlay";
 import { FilePanel } from "@/components/anim/file-panel";
 import { HeroVisual } from "@/components/hero-visual";
 
@@ -27,6 +27,7 @@ export function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute -top-40 left-1/2 h-[560px] w-[840px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(52,211,153,0.09),transparent_65%)]"
       />
+      <GlowOverlay className="absolute inset-0 z-0" />
       <div className="relative mx-auto flex min-h-svh max-w-7xl flex-col justify-center px-6 pb-24 pt-60 sm:pt-72 lg:pt-80">
         <div className="grid items-center gap-16 lg:grid-cols-[1.2fr_1fr]">
         <HeroItem>
@@ -35,11 +36,9 @@ export function Hero() {
                 {content.role}
               </p>
               <h1 className="max-w-3xl text-5xl font-medium leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-                <NameFx>
-                  {content.name.split(" ")[0]}
-                  <span className="text-zinc-400"> </span>
-                  {content.name.split(" ").slice(1).join(" ")}
-                </NameFx>
+                {content.name.split(" ")[0]}
+                <span className="text-zinc-400"> </span>
+                {content.name.split(" ").slice(1).join(" ")}
               </h1>
               <p className="mt-6 text-xl leading-relaxed text-zinc-300 lg:text-2xl">
                 {content.tagline}
