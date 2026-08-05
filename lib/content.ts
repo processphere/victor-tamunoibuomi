@@ -9,8 +9,9 @@ export const content = {
   location: "Remote, worldwide",
   email: "victortamunoibuomi07@gmail.com",
   github: "https://github.com/processphere",
-  linkedin: "https://www.linkedin.com/",
-  facebook: "https://www.facebook.com/", // update with your real profile URL
+  linkedin:
+    "https://www.linkedin.com/in/victor-shadrach-7925bb289?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+  facebook: "https://www.facebook.com/victor.tamunoiboumi",
   resumeUrl: "", // optional /resume.pdf in public/
   siteUrl: "https://victor-shadrach.vercel.app", // update after your Vercel deploy
 
