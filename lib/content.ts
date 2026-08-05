@@ -17,6 +17,9 @@ export const content = {
   // Nav/header avatar — placeholder until you add your own photo.
   logo: "/images/header-logo.jpeg",
 
+  // Hero portrait — used by the 3D circle in the hero.
+  heroImage: "/images/hero-image.jpeg",
+
   // Drop your photo at public/images/photo.png (square crop works best), then set:
   photo: "/images/photo.png",
 
