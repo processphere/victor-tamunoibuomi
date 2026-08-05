@@ -9,6 +9,7 @@ import {
   FocusIcon,
 } from "@/components/icons";
 import { HeroItem } from "@/components/anim/hero-enter";
+import { NameFx } from "@/components/anim/name-fx";
 import { FilePanel } from "@/components/anim/file-panel";
 import { HeroVisual } from "@/components/hero-visual";
 
@@ -34,9 +35,11 @@ export function Hero() {
                 {content.role}
               </p>
               <h1 className="max-w-3xl text-5xl font-medium leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-                {content.name.split(" ")[0]}
-                <span className="text-zinc-400"> </span>
-                {content.name.split(" ").slice(1).join(" ")}
+                <NameFx>
+                  {content.name.split(" ")[0]}
+                  <span className="text-zinc-400"> </span>
+                  {content.name.split(" ").slice(1).join(" ")}
+                </NameFx>
               </h1>
               <p className="mt-6 text-xl leading-relaxed text-zinc-300 lg:text-2xl">
                 {content.tagline}
