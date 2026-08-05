@@ -125,27 +125,9 @@ function GlobeScene() {
         <lineBasicMaterial color={ACCENT} transparent opacity={0.55} />
       </lineSegments>
 
-      {LOCATIONS.map((loc) => {
-        const pos = latLngToVec3(loc.lat, loc.lng, 1.47);
-        return (
-          <group key={loc.name} position={pos}>
-            <mesh>
-              <sphereGeometry args={[0.035, 16, 16]} />
-              <meshBasicMaterial color={ACCENT} />
-            </mesh>
-            <Html
-              center
-              distanceFactor={8}
-              position={[0, 0.14, 0]}
-              style={{ pointerEvents: "none" }}
-            >
-              <span className="whitespace-nowrap rounded-full border border-accent/30 bg-background/90 px-2.5 py-1 font-mono text-[11px] text-accent backdrop-blur-sm">
-                {loc.name.split(",")[0]}
-              </span>
-            </Html>
-          </group>
-        );
-      })}
+      {LOCATIONS.map((loc) => (
+        <Marker key={loc.name} loc={loc} />
+      ))}
     </group>
   );
 }
@@ -153,22 +135,24 @@ function GlobeScene() {
 export function Globe() {
   const reduce = useReducedMotion();
   return (
-    <Canvas
-      camera={{ position: [0, 0, 4.3], fov: 45 }}
-      dpr={[1, 2]}
-      style={{ background: "transparent", touchAction: "none" }}
-    >
-      <ambientLight intensity={0.7} />
-      <directionalLight position={[3, 3, 4]} intensity={1.2} />
-      <GlobeScene />
-      <OrbitControls
-        enablePan={false}
-        minDistance={3}
-        maxDistance={6}
-        enableZoom
-        autoRotate={!reduce}
-        autoRotateSpeed={0.6}
-      />
-    </Canvas>
+    <div className="h-full w-full cursor-grab active:cursor-grabbing">
+      <Canvas
+        camera={{ position: [0, 0, 4.3], fov: 45 }}
+        dpr={[1, 2]}
+        style={{ background: "transparent", touchAction: "none" }}
+      >
+        <ambientLight intensity={0.7} />
+        <directionalLight position={[3, 3, 4]} intensity={1.2} />
+        <GlobeScene />
+        <OrbitControls
+          enablePan={false}
+          minDistance={3}
+          maxDistance={6}
+          enableZoom
+          autoRotate={!reduce}
+          autoRotateSpeed={0.6}
+        />
+      </Canvas>
+    </div>
   );
 }

@@ -12,7 +12,7 @@ export function Contact() {
       title="Let's build something together."
       description={content.sectionDescriptions.contact}
     >
-      <div className="grid gap-10 rounded-3xl border border-white/10 bg-white/[0.02] p-8 sm:p-12 lg:grid-cols-[1fr_1.2fr]">
+      <div className="grid gap-10 rounded-3xl border border-white/10 bg-white/[0.02] p-5 sm:p-12 lg:grid-cols-[1fr_1.2fr]">
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent">
             Direct line
