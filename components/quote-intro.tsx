@@ -22,6 +22,9 @@ const highlighted = (text: string) => {
 export function QuoteIntro() {
   const reduce = useReducedMotion();
   const [visible, setVisible] = useState(false);
+  const [typed, setTyped] = useState(0);
+  const note = "Welcome — a quick thought first";
+  const typingDone = typed >= note.length;
 
   useEffect(() => {
     if (reduce) return;
@@ -29,6 +32,13 @@ export function QuoteIntro() {
     const t = window.setTimeout(() => setVisible(true), 250);
     return () => window.clearTimeout(t);
   }, [reduce]);
+
+  useEffect(() => {
+    if (!visible || reduce) return;
+    if (typed >= note.length) return;
+    const t = window.setTimeout(() => setTyped((c) => c + 1), 45);
+    return () => window.clearTimeout(t);
+  }, [visible, typed, reduce, note.length]);
 
   const dismiss = () => {
     try {
@@ -75,8 +85,16 @@ export function QuoteIntro() {
             <div className="mx-auto w-44 sm:w-52">
               <HeroVisual />
             </div>
-            <p className="mt-8 font-mono text-xs font-semibold uppercase tracking-[0.35em] text-accent">
-              A note before you explore
+            <p className="mt-8 min-h-5 font-mono text-xs font-semibold uppercase tracking-[0.35em] text-accent">
+              {reduce ? note : note.slice(0, typed)}
+              {!reduce && (
+                <span
+                  aria-hidden="true"
+                  className={`ml-0.5 inline-block h-3.5 w-[2px] translate-y-0.5 bg-accent ${
+                    typingDone ? "animate-pulse" : ""
+                  }`}
+                />
+              )}
             </p>
             <blockquote className="mx-auto mt-6 max-w-3xl text-balance text-3xl font-medium leading-snug tracking-tight text-zinc-100 sm:text-5xl">
               {highlighted(content.quote.text)}
