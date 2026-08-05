@@ -7,6 +7,7 @@ import {
   CloseIcon,
   GitHubIcon,
 } from "@/components/icons";
+import { scrollToSection } from "@/lib/scroll";
 
 export type GalleryProject = {
   title: string;
@@ -104,7 +105,7 @@ export function ProjectGalleryModal({
 
         <div className="flex items-center justify-between gap-4 border-t border-white/10 px-6 py-4">
           <div className="flex items-center gap-4">
-            {project.githubUrl && (
+            {project.githubUrl ? (
               <a
                 href={project.githubUrl}
                 target="_blank"
@@ -113,6 +114,18 @@ export function ProjectGalleryModal({
               >
                 <GitHubIcon className="h-4 w-4" />
                 Code
+              </a>
+            ) : (
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("#contact");
+                }}
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-500 transition-colors hover:text-white"
+              >
+                <GitHubIcon className="h-4 w-4" />
+                Code on request
               </a>
             )}
             {project.liveUrl && (

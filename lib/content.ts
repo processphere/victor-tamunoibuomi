@@ -75,7 +75,8 @@ export const content = {
         "A check-in/check-out attendance system I built for my tech company — daily QR code generation and scanning, student onboarding, and attendance reports.",
       tech: ["Next.js", "TypeScript", "Node.js", "Firebase"],
       liveUrl: "https://mytechtan-attendance.vercel.app",
-      githubUrl: "https://github.com/processphere",
+      // Live apps — code is private, shown on request.
+      githubUrl: "",
       image: "/images/project-1a.png",
       // Extra screenshots shown in the "See all" gallery. Drop files into
       // public/images/ and add them here, e.g. "/images/project-1b.png".
@@ -98,7 +99,7 @@ export const content = {
         "A social media mobile app built with React Native and Expo — profiles, feeds, and real-time interactions in a native experience.",
       tech: ["React Native", "Expo", "Node.js", "MongoDB"],
       liveUrl: "",
-      githubUrl: "https://github.com/processphere",
+      githubUrl: "", // live app — code on request
       image: "/images/project-2a.png", // e.g. "/images/project-two.png"
       screenshots: [
         "/images/project-2b.png",
@@ -124,7 +125,7 @@ export const content = {
         "A social media marketplace web app where users buy and sell securely — real money transactions handled end to end, backed by a powerful admin dashboard.",
       tech: ["Next.js", "TypeScript", "Tailwind", "Neon"],
       liveUrl: "https://deambrosesocials.com",
-      githubUrl: "https://github.com/processphere",
+      githubUrl: "", // live app — code on request
       image: "/images/project-3a.png", // e.g. "/images/project-three.png"
       screenshots: [
         "/images/project-3b.png",
@@ -147,14 +148,19 @@ export const content = {
       featured: false,
     },
     {
-      title: "Project Four",
+      title: "Kalearnda",
       description:
-        "Replace me with a real project. Rename, describe, and drop in a live link and the source repo.",
-      tech: ["React", "Node.js", "MongoDB"],
-      liveUrl: "",
-      githubUrl: "https://github.com/processphere",
-      image: "", // e.g. "/images/project-four.png"
-      screenshots: [],
+        "A learning and quiz platform for professional exams like JAMB and others — practice questions, progress tracking, and mock tests.",
+      tech: ["React", "Node.js", "Express", "MongoDB"],
+      liveUrl: "https://kalearnda.com",
+      githubUrl: "", // live app — code on request
+      image: "/images/project-4a.png", // e.g. "/images/project-four.png"
+      screenshots: [
+        "/images/project-4b.png",
+        "/images/project-4c.png",
+        "/images/project-4d.png",
+        "/images/project-4e.png",
+      ],
       captions: [],
       features: [],
       emoji: "04",

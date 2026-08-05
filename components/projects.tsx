@@ -7,6 +7,7 @@ import { AccordionSection } from "@/components/accordion";
 import { ArrowUpRightIcon, GitHubIcon, ImagesIcon, ListIcon } from "@/components/icons";
 import { ProjectGalleryModal } from "@/components/project-modal";
 import { FeaturesModal } from "@/components/feature-modal";
+import { scrollToSection } from "@/lib/scroll";
 
 export function Projects() {
   const [activeProject, setActiveProject] = useState<(typeof content.projects)[number] | null>(null);
@@ -78,7 +79,7 @@ export function Projects() {
                 </ul>
 <div className="mt-4 flex items-center justify-between border-t border-white/5 pt-4">
                   <div className="flex items-center gap-4">
-                    {project.githubUrl && (
+                    {project.githubUrl ? (
                       <a
                         href={project.githubUrl}
                         target="_blank"
@@ -87,6 +88,18 @@ export function Projects() {
                       >
                         <GitHubIcon className="h-4 w-4" />
                         Code
+                      </a>
+                    ) : (
+                      <a
+                        href="#contact"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          scrollToSection("#contact");
+                        }}
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-500 transition-colors hover:text-zinc-100"
+                      >
+                        <GitHubIcon className="h-4 w-4" />
+                        Code on request
                       </a>
                     )}
                     {project.features?.length > 0 && (
@@ -119,13 +132,15 @@ export function Projects() {
       </div>
       <div className="mt-12 text-center">
         <a
-          href={content.github}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#contact"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection("#contact");
+          }}
           className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-zinc-200 transition-colors hover:border-white/40 hover:text-white"
         >
           <GitHubIcon className="h-4 w-4" />
-          View all on GitHub
+          Code available on request
           <ArrowUpRightIcon className="h-4 w-4" />
         </a>
       </div>
