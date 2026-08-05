@@ -26,6 +26,13 @@ export const content = {
 
   status: "Available for new opportunities",
 
+  // First-visit welcome quote (shown once per browser).
+  quote: {
+    text: "There's a solution to every problem — and every problem can always be solved.",
+    attribution:
+      "— something I've learned from years of debugging, building, and shipping",
+  },
+
   sectionDescriptions: {
     about:
       "A quick introduction to who I am, how I work, and the problems I like to solve.",
