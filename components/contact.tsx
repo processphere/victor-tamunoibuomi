@@ -26,12 +26,12 @@ export function Contact() {
           </p>
           <a
             href={`mailto:${content.email}`}
-            className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-zinc-200 transition-colors hover:border-white/40 hover:text-white"
+            className="mt-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-zinc-200 transition-colors break-all hover:border-white/40 hover:text-white"
           >
-            <MailIcon className="h-4 w-4" />
-            {content.email}
+            <MailIcon className="h-4 w-4 shrink-0" />
+            <span className="min-w-0">{content.email}</span>
           </a>
-          <div className="mt-10 flex items-center gap-6">
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
             {[
               { label: "GitHub", href: content.github, Icon: GitHubIcon },
               { label: "LinkedIn", href: content.linkedin, Icon: LinkedInIcon },
