@@ -11,7 +11,6 @@ import {
   GitHubIcon,
   LinkedInIcon,
   MailIcon,
-  PinIcon,
 } from "@/components/icons";
 
 const ACCENT = "#34d399";
@@ -85,14 +84,14 @@ export function HeroVisual() {
 
   if (failed) {
     return (
-      <div className="relative mx-auto w-full max-w-[700px]">
+      <div className="relative ml-auto w-full max-w-[700px]">
         <QuickLinks />
       </div>
     );
   }
 
   return (
-    <div className="relative mx-auto w-full max-w-[420px]">
+    <div className="relative ml-auto w-full max-w-[420px]">
       <div className="relative aspect-square w-full overflow-hidden rounded-full">
         <Canvas
             camera={{ position: [0, 0, 5], fov: 45 }}
@@ -114,22 +113,6 @@ export function HeroVisual() {
         aria-hidden="true"
         className="pointer-events-none absolute -inset-6 rounded-full bg-[radial-gradient(circle,rgba(52,211,153,0.14),transparent_70%)]"
       />
-
-      <div className="relative z-10 -mt-10 flex justify-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-background/80 px-4 py-2 font-mono text-xs uppercase tracking-[0.2em] text-zinc-200 backdrop-blur-md">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-          </span>
-          Available
-        </span>
-      </div>
-      <div className="absolute right-0 top-10">
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-background/80 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-zinc-300 backdrop-blur-md">
-          <PinIcon className="h-3 w-3 text-accent" />
-          {content.location.split(",")[0]}
-        </span>
-      </div>
     </div>
   );
 }
