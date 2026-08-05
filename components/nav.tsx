@@ -84,9 +84,13 @@ export function Nav() {
               <a
                 href={link.href}
                 onClick={go(link.href)}
-                className="text-[13px] font-mono uppercase tracking-[0.15em] text-zinc-300 transition-colors hover:text-zinc-100"
+                className="group relative text-[13px] font-mono uppercase tracking-[0.15em] text-zinc-300 transition-colors duration-300 hover:text-zinc-100"
               >
                 {link.label}
+                <span
+                  aria-hidden="true"
+                  className="absolute -bottom-1.5 left-0 h-px w-full origin-left scale-x-0 bg-accent transition-transform duration-300 group-hover:scale-x-100"
+                />
               </a>
             </li>
           ))}

@@ -59,7 +59,7 @@ export function Skills() {
                   <motion.li
                     key={item}
                     variants={bullet}
-                    className="flex items-center justify-between gap-3 rounded-xl bg-accent/10 px-3.5 py-2.5 text-base text-zinc-200"
+                    className="flex items-center justify-between gap-3 rounded-xl bg-zinc-500/10 px-3.5 py-2.5 text-base text-zinc-200"
                   >
                     <span className="flex items-center gap-3">
                       {(() => {

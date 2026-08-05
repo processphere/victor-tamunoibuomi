@@ -3,7 +3,7 @@ export const content = {
   firstName: "Victor",
   role: "Full-Stack Developer",
   tagline:
-    "I build fast, accessible, and well-crafted web products — from polished interfaces to the APIs that power them.",
+    "I build fast, accessible, and well-crafted web and mobile products — from polished interfaces to the APIs that power them.",
 
   // Update these with your real contact details.
   location: "Remote, worldwide",
@@ -110,31 +110,24 @@ export const content = {
 
   experience: [
     {
-      title: "Placeholder Role",
-      org: "Company / Client",
+      title: "Software Engineer",
+      org: "Harvoxx",
       period: "2025 — Present",
       type: "Work",
       description:
-        "replace.me — Add a short line about what you built, owned, or shipped here.",
+        "replace.me — Add a short line about what you built, owned, or shipped at Harvoxx.",
       tech: ["React", "Next.js"],
+      logo: "", // e.g. "/images/harvoxx-logo.png"
     },
     {
-      title: "Placeholder Role",
-      org: "Company / Client",
+      title: "Manager & Engineer",
+      org: "TechTan",
       period: "2024 — 2025",
       type: "Work",
       description:
-        "replace.me — Add a short line about what you built, owned, or shipped here.",
+        "replace.me — Add a short line about what you managed and built at TechTan.",
       tech: ["Node.js", "Express"],
-    },
-    {
-      title: "Placeholder Degree / Bootcamp",
-      org: "Institution",
-      period: "2023 — 2024",
-      type: "Education",
-      description:
-        "replace.me — Course, focus area, or highlight of your training.",
-      tech: [],
+      logo: "", // e.g. "/images/techtan-logo.png"
     },
   ],
 

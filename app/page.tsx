@@ -18,9 +18,9 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <TechMarquee />
         <About />
         <Skills />
+        <TechMarquee />
         <Projects />
         <Experience />
         <Contact />
