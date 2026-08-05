@@ -74,6 +74,19 @@ export function ArrowUpIcon({ className }: IconProps) {
   );
 }
 
+export function FacebookIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M13.5 21.5v-8h2.7l.4-3.1h-3.1V8.4c0-.9.25-1.5 1.55-1.5h1.65V4.1c-.3-.04-1.3-.13-2.46-.13-2.43 0-4.1 1.48-4.1 4.21v2.35H7.03v3.1h2.71v8h3.76Z" />
+    </svg>
+  );
+}
+
 export function ReactIcon({ className }: IconProps) {
   return (
     <svg

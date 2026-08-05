@@ -1,19 +1,21 @@
-import Image from "next/image";
 import { content } from "@/lib/content";
 import {
   ArrowUpRightIcon,
   GitHubIcon,
   LinkedInIcon,
   MailIcon,
+  FacebookIcon,
   PinIcon,
   FocusIcon,
 } from "@/components/icons";
 import { HeroItem } from "@/components/anim/hero-enter";
 import { FilePanel } from "@/components/anim/file-panel";
+import { ProfilePhoto } from "@/components/profile-photo";
 
 const socials = [
   { label: "GitHub", href: content.github, Icon: GitHubIcon },
   { label: "LinkedIn", href: content.linkedin, Icon: LinkedInIcon },
+  { label: "Facebook", href: content.facebook, Icon: FacebookIcon },
   { label: "Email", href: `mailto:${content.email}`, Icon: MailIcon },
 ];
 
@@ -82,14 +84,7 @@ export function Hero() {
           {content.photo && (
             <HeroItem delay={0.15}>
               <div className="mx-auto shrink-0">
-                <Image
-                  src={content.photo}
-                  alt={`Portrait of ${content.name}`}
-                  width={320}
-                  height={320}
-                  priority
-                  className="h-56 w-56 rounded-2xl border border-white/10 object-cover sm:h-72 sm:w-72 lg:h-80 lg:w-80"
-                />
+                <ProfilePhoto priority />
               </div>
             </HeroItem>
           )}

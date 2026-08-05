@@ -1,7 +1,7 @@
 import { content } from "@/lib/content";
 import { Section, SectionHeader, SectionDivider } from "@/components/ui";
 import { FadeIn } from "@/components/anim/fade-in";
-import { GitHubIcon, LinkedInIcon, MailIcon } from "@/components/icons";
+import { GitHubIcon, LinkedInIcon, MailIcon, FacebookIcon } from "@/components/icons";
 import { ContactForm } from "@/components/contact-form";
 
 export function Contact() {
@@ -42,6 +42,7 @@ export function Contact() {
                 {[
                   { label: "GitHub", href: content.github, Icon: GitHubIcon },
                   { label: "LinkedIn", href: content.linkedin, Icon: LinkedInIcon },
+                  { label: "Facebook", href: content.facebook, Icon: FacebookIcon },
                 ].map(({ label, href, Icon }) => (
                   <a
                     key={label}

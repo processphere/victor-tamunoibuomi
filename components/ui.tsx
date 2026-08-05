@@ -22,6 +22,30 @@ export function Section({
   );
 }
 
+function IndexMark({ value }: { value: string }) {
+  return (
+    <svg
+      viewBox="0 0 100 64"
+      aria-hidden="true"
+      className="h-14 w-20 shrink-0 sm:h-20 sm:w-28"
+    >
+      <text
+        x="0"
+        y="56"
+        style={{ fontFamily: "var(--font-geist-mono), monospace" }}
+        fontSize="60"
+        fontWeight="700"
+        letterSpacing="-4"
+        fill="none"
+        stroke="var(--accent)"
+        strokeWidth="1.6"
+      >
+        {value}
+      </text>
+    </svg>
+  );
+}
+
 export function SectionHeader({
   index,
   eyebrow,
@@ -36,10 +60,13 @@ export function SectionHeader({
   return (
     <div className="grid items-end gap-6 lg:grid-cols-[1fr_auto]">
       <div>
-        <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-400">
-          <span className="text-accent">{index}</span> — {eyebrow}
-        </p>
-        <h2 className="mt-4 text-4xl font-medium tracking-tight sm:text-5xl">
+        <div className="flex items-end gap-5">
+          <IndexMark value={index} />
+          <p className="pb-2 font-mono text-sm font-semibold uppercase tracking-[0.3em] text-zinc-200 sm:pb-3">
+            {eyebrow}
+          </p>
+        </div>
+        <h2 className="mt-5 text-4xl font-medium tracking-tight sm:text-5xl">
           {title}
         </h2>
       </div>

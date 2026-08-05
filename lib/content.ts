@@ -7,22 +7,17 @@ export const content = {
 
   // Update these with your real contact details.
   location: "Remote, worldwide",
-  email: "processphere@gmail.com",
+  email: "victortamunoibuomi07@gmail.com",
   github: "https://github.com/processphere",
   linkedin: "https://www.linkedin.com/",
+  facebook: "https://www.facebook.com/", // update with your real profile URL
   resumeUrl: "", // optional /resume.pdf in public/
+  siteUrl: "https://victor-shadrach.vercel.app", // update after your Vercel deploy
 
-  // Drop your photo at public/photo.png (square crop works best), then set:
-  photo: "/photo.png",
+  // Drop your photo at public/images/photo.png (square crop works best), then set:
+  photo: "/images/photo.png",
 
   status: "Available for new opportunities",
-
-  heroFacts: [
-    { label: "Email", value: "processphere@gmail.com", href: "mailto:processphere@gmail.com" },
-    { label: "Location", value: "Remote, worldwide", href: "" },
-    { label: "Focus", value: "Full-Stack Web", href: "" },
-    { label: "Status", value: "Open to work", href: "" },
-  ],
 
   sectionDescriptions: {
     about:
@@ -162,9 +157,4 @@ export const content = {
     { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" },
   ],
-};
-
-export const accent = {
-  // Single muted accent used sparingly across the site.
-  hex: "#34d399",
 };
