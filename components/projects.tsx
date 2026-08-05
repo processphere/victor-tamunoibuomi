@@ -17,7 +17,7 @@ export function Projects() {
             key={project.title}
             className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-white/[0.04]"
           >
-            <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden border-b border-white/5 bg-gradient-to-br from-white/[0.04] to-transparent">
+            <div className="relative flex aspect-[4/5] items-center justify-center overflow-hidden border-b border-white/5 bg-gradient-to-br from-white/[0.04] to-transparent">
               {project.image ? (
                 <img
                   src={project.image}

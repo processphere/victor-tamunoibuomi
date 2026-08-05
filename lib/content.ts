@@ -74,7 +74,7 @@ export const content = {
       description:
         "A check-in/check-out attendance system I built for my tech company — daily QR code generation and scanning, employee onboarding, and attendance reports.",
       tech: ["Next.js", "TypeScript", "Node.js", "MongoDB"],
-      liveUrl: "",
+      liveUrl: "https://mytechtan-attendance.vercel.app",
       githubUrl: "https://github.com/processphere",
       image: "/images/project-1a.png",
       emoji: "01",
