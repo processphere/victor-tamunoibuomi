@@ -21,7 +21,7 @@ export default function OpenGraphImage() {
         }}
       >
         <p style={{ fontFamily: "monospace", fontSize: 30, color: "#34d399", margin: 0 }}>
-          {"$ echo $USER — " + content.role}
+          {content.role}
         </p>
         <h1 style={{ fontSize: 92, fontWeight: 600, letterSpacing: "-3px", margin: 0 }}>
           {content.name}

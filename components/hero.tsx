@@ -10,7 +10,6 @@ import {
 } from "@/components/icons";
 import { HeroItem } from "@/components/anim/hero-enter";
 import { FilePanel } from "@/components/anim/file-panel";
-import { ProfilePhoto } from "@/components/profile-photo";
 
 const socials = [
   { label: "GitHub", href: content.github, Icon: GitHubIcon },
@@ -26,12 +25,11 @@ export function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute -top-40 left-1/2 h-[560px] w-[840px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(52,211,153,0.09),transparent_65%)]"
       />
-      <div className="relative mx-auto flex min-h-svh max-w-7xl flex-col justify-center px-6 pb-24 pt-32">
+      <div className="relative mx-auto flex min-h-svh max-w-7xl flex-col justify-center px-6 pb-24 pt-52 sm:pt-60 lg:pt-72">
         <div className="grid items-center gap-14 lg:grid-cols-[1fr_auto]">
           <HeroItem>
             <div>
               <p className="mb-6 font-mono text-sm text-zinc-400">
-                <span className="text-accent">$</span> echo $USER —{" "}
                 {content.role}
               </p>
               <h1 className="max-w-3xl text-5xl font-medium leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
@@ -57,7 +55,7 @@ export function Hero() {
                   Contact me
                 </a>
               </div>
-              <div className="mt-14 flex items-center gap-5">
+              <div className="mt-14 flex flex-wrap items-center gap-x-5 gap-y-3">
                 {socials.map(({ label, href, Icon }) => (
                   <a
                     key={label}
@@ -70,24 +68,24 @@ export function Hero() {
                     <Icon className="h-5 w-5" />
                   </a>
                 ))}
-                <span className="h-4 w-px bg-white/10" aria-hidden="true" />
-                <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-zinc-400">
-                  <span className="relative flex h-2 w-2">
+                <span
+                  className="hidden h-4 w-px bg-white/10 sm:inline-block"
+                  aria-hidden="true"
+                />
+                <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-zinc-300 sm:text-zinc-400">
+                  <span className="relative flex h-2 w-2 shrink-0">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
                   </span>
-                  {content.status}
+                  <span className="sm:hidden">Available</span>
+                  <span className="hidden sm:inline">{content.status}</span>
                 </span>
               </div>
             </div>
           </HeroItem>
-          {content.photo && (
-            <HeroItem delay={0.15}>
-              <div className="mx-auto shrink-0">
-                <ProfilePhoto priority />
-              </div>
-            </HeroItem>
-          )}
+          <HeroItem delay={0.15} className="w-full">
+            <FilePanel />
+          </HeroItem>
         </div>
 
         <HeroItem delay={0.2}>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { content } from "@/lib/content";
@@ -8,19 +8,41 @@ import { content } from "@/lib/content";
 export function Nav() {
   const reduce = useReducedMotion();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [photoOk, setPhotoOk] = useState(true);
   const showPhoto = content.logo !== "" && photoOk;
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const close = () => setOpen(false);
+
+  const avatarClass = scrolled
+    ? "h-11 w-11 rounded-full border border-white/10 bg-white object-cover ring-1 ring-accent/40 sm:h-12 sm:w-12"
+    : "h-40 w-40 rounded-full border border-white/10 bg-white object-cover ring-2 ring-accent/40 sm:h-56 sm:w-56";
+
+  const monogramClass = scrolled
+    ? "h-11 w-11 rounded-full border border-white/10 bg-white/[0.03] font-mono text-lg font-medium text-accent ring-1 ring-accent/40 sm:h-12 sm:w-12"
+    : "h-40 w-40 rounded-full border border-white/10 bg-white/[0.03] font-mono text-4xl font-medium text-accent ring-2 ring-accent/40 sm:h-56 sm:w-56 sm:text-5xl";
 
   return (
     <motion.header
       initial={{ y: reduce ? 0 : -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-background/70 backdrop-blur-md"
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        scrolled ? "bg-background/80 backdrop-blur-md" : "bg-background/70 backdrop-blur-md"
+      }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4">
+      <nav
+        className={`mx-auto flex max-w-7xl items-center justify-between px-5 transition-all duration-300 sm:px-6 ${
+          scrolled ? "py-2 sm:py-2.5" : "py-3.5 sm:py-4"
+        }`}
+      >
         <a
           href="#top"
           onClick={close}
@@ -31,23 +53,19 @@ export function Nav() {
             <Image
               src={content.logo}
               alt=""
-              width={48}
-              height={48}
+              width={224}
+              height={224}
               onError={() => setPhotoOk(false)}
-              className="h-10 w-10 shrink-0 rounded-full border border-white/10 object-cover sm:h-11 sm:w-11"
+              className={`${avatarClass} shrink-0 transition-all duration-300`}
             />
           ) : (
             <span
               aria-hidden="true"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] font-mono text-base font-medium text-accent sm:h-11 sm:w-11"
+              className={`${monogramClass} flex shrink-0 items-center justify-center transition-all duration-300`}
             >
               {content.firstName.charAt(0)}
             </span>
           )}
-          <span className="hidden font-mono text-sm font-medium tracking-tight sm:inline">
-            {content.name}
-            <span className="text-accent">_</span>
-          </span>
         </a>
 
         <ul className="hidden items-center gap-6 sm:flex">

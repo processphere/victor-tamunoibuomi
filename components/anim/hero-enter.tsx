@@ -20,13 +20,16 @@ export function HeroEnter({ children }: { children: React.ReactNode }) {
 export function HeroItem({
   delay = 0,
   children,
+  className = "",
 }: {
   delay?: number;
   children: React.ReactNode;
+  className?: string;
 }) {
   const reduce = useReducedMotion();
   return (
     <motion.div
+      className={className}
       initial={{ opacity: 0, y: reduce ? 0 : 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay, ease: EASE }}
