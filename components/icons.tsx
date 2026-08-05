@@ -268,6 +268,24 @@ export function CheckIcon({ className }: IconProps) {
   );
 }
 
+export function ListIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M9 6h11M9 12h11M9 18h11" />
+      <path d="M3 6h.01M3 12h.01M3 18h.01" />
+    </svg>
+  );
+}
+
 export function ImagesIcon({ className }: IconProps) {
   return (
     <svg

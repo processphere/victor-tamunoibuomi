@@ -72,8 +72,8 @@ export const content = {
     {
       title: "Attendance System",
       description:
-        "A check-in/check-out attendance system I built for my tech company — daily QR code generation and scanning, employee onboarding, and attendance reports.",
-      tech: ["Next.js", "TypeScript", "Node.js", "MongoDB"],
+        "A check-in/check-out attendance system I built for my tech company — daily QR code generation and scanning, student onboarding, and attendance reports.",
+      tech: ["Next.js", "TypeScript", "Node.js", "Firebase"],
       liveUrl: "https://mytechtan-attendance.vercel.app",
       githubUrl: "https://github.com/processphere",
       image: "/images/project-1a.png",
@@ -83,6 +83,12 @@ export const content = {
       // Optional per-image captions, shown above each screenshot in the
       // gallery. One string per image (main image first), in order.
       captions: [],
+      features: [
+        "Daily QR code generation per employee",
+        "QR check-in / check-out scanning",
+        "Employee onboarding and profiles",
+        "Attendance reports and exports",
+      ],
       emoji: "01",
       featured: true,
     },
@@ -102,19 +108,41 @@ export const content = {
         "/images/project-2f.png",
       ], // e.g. ["/images/project-two-b.png"]
       captions: [],
+      features: [
+        "Profile creation and editing",
+        "Personal and home feeds",
+        "Reels with video upload and playback",
+        "Likes, comments, and follows",
+        "Push notifications",
+      ],
       emoji: "02",
       featured: true,
     },
     {
-      title: "Project Three",
+      title: "Deambrose Socials",
       description:
-        "Replace me with a real project. Keep the description tight — what you built, and why it was worth building.",
-      tech: ["Next.js", "Tailwind", "REST APIs"],
-      liveUrl: "",
+        "A social media marketplace web app where users buy and sell securely — real money transactions handled end to end, backed by a powerful admin dashboard.",
+      tech: ["Next.js", "TypeScript", "Tailwind", "Neon"],
+      liveUrl: "https://deambrosesocials.com",
       githubUrl: "https://github.com/processphere",
-      image: "", // e.g. "/images/project-three.png"
-      screenshots: [],
+      image: "/images/project-3a.png", // e.g. "/images/project-three.png"
+      screenshots: [
+        "/images/project-3b.png",
+        "/images/project-3c.png",
+        "/images/project-3d.png",
+        "/images/project-3e.png",
+        "/images/project-3f.png",
+        "/images/project-3g.png",
+      ],
       captions: [],
+      features: [
+        "User marketplace with listings and search",
+        "Social features — profiles, likes, and comments",
+        "Secure wallet with real money transactions",
+        "Escrow-style payment handling",
+        "Admin dashboard for users, listings, and payments",
+        "Transaction history and dispute management",
+      ],
       emoji: "03",
       featured: false,
     },
@@ -128,6 +156,7 @@ export const content = {
       image: "", // e.g. "/images/project-four.png"
       screenshots: [],
       captions: [],
+      features: [],
       emoji: "04",
       featured: false,
     },

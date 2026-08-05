@@ -4,11 +4,13 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { content } from "@/lib/content";
 import { AccordionSection } from "@/components/accordion";
-import { ArrowUpRightIcon, GitHubIcon, ImagesIcon } from "@/components/icons";
+import { ArrowUpRightIcon, GitHubIcon, ImagesIcon, ListIcon } from "@/components/icons";
 import { ProjectGalleryModal } from "@/components/project-modal";
+import { FeaturesModal } from "@/components/feature-modal";
 
 export function Projects() {
   const [activeProject, setActiveProject] = useState<(typeof content.projects)[number] | null>(null);
+  const [featuresProject, setFeaturesProject] = useState<(typeof content.projects)[number] | null>(null);
 
   return (
     <AccordionSection
@@ -74,18 +76,30 @@ export function Projects() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-4 flex items-center justify-between border-t border-white/5 pt-4">
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-400 transition-colors hover:text-zinc-100"
-                    >
-                      <GitHubIcon className="h-4 w-4" />
-                      Code
-                    </a>
-                  )}
+<div className="mt-4 flex items-center justify-between border-t border-white/5 pt-4">
+                  <div className="flex items-center gap-4">
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-400 transition-colors hover:text-zinc-100"
+                      >
+                        <GitHubIcon className="h-4 w-4" />
+                        Code
+                      </a>
+                    )}
+                    {project.features?.length > 0 && (
+                      <button
+                        type="button"
+                        onClick={() => setFeaturesProject(project)}
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-400 transition-colors hover:text-zinc-100"
+                      >
+                        <ListIcon className="h-4 w-4" />
+                        Features
+                      </button>
+                    )}
+                  </div>
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
@@ -120,6 +134,12 @@ export function Projects() {
           <ProjectGalleryModal
             project={activeProject}
             onClose={() => setActiveProject(null)}
+          />
+        )}
+        {featuresProject && (
+          <FeaturesModal
+            project={featuresProject}
+            onClose={() => setFeaturesProject(null)}
           />
         )}
       </AnimatePresence>
