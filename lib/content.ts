@@ -77,6 +77,12 @@ export const content = {
       liveUrl: "https://mytechtan-attendance.vercel.app",
       githubUrl: "https://github.com/processphere",
       image: "/images/project-1a.png",
+      // Extra screenshots shown in the "See all" gallery. Drop files into
+      // public/images/ and add them here, e.g. "/images/project-1b.png".
+      screenshots: ["/images/project-1b.png", "/images/project-1c.png"],
+      // Optional per-image captions, shown above each screenshot in the
+      // gallery. One string per image (main image first), in order.
+      captions: [],
       emoji: "01",
       featured: true,
     },
@@ -88,6 +94,8 @@ export const content = {
       liveUrl: "",
       githubUrl: "https://github.com/processphere",
       image: "", // e.g. "/images/project-two.png"
+      screenshots: [], // e.g. ["/images/project-two-b.png"]
+      captions: [],
       emoji: "02",
       featured: true,
     },
@@ -99,6 +107,8 @@ export const content = {
       liveUrl: "",
       githubUrl: "https://github.com/processphere",
       image: "", // e.g. "/images/project-three.png"
+      screenshots: [],
+      captions: [],
       emoji: "03",
       featured: false,
     },
@@ -110,6 +120,8 @@ export const content = {
       liveUrl: "",
       githubUrl: "https://github.com/processphere",
       image: "", // e.g. "/images/project-four.png"
+      screenshots: [],
+      captions: [],
       emoji: "04",
       featured: false,
     },
