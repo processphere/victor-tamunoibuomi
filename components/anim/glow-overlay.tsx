@@ -31,7 +31,7 @@ function GlowPlane({
 }: {
   size: { width: number; height: number };
   hovered: boolean;
-  reduce: boolean;
+  reduce: boolean | null;
   mouse: React.MutableRefObject<{ x: number; y: number }>;
 }) {
   const mat = useRef<THREE.ShaderMaterial>(null);
