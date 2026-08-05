@@ -22,7 +22,7 @@ export function Projects() {
                 <img
                   src={project.image}
                   alt={`${project.title} screenshot`}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
               ) : (
                 <span className="font-mono text-3xl text-zinc-700 transition-colors group-hover:text-accent/70">
