@@ -18,12 +18,12 @@ export function ScrollProgress() {
       <motion.div
         aria-hidden="true"
         style={{ scaleY }}
-        className="fixed inset-y-0 left-0 z-[70] w-1.5 origin-top bg-zinc-400 shadow-[0_0_12px_rgba(161,161,170,0.5)]"
+        className="fixed inset-y-0 left-0 z-[70] w-1.5 origin-top bg-zinc-700 shadow-[0_0_12px_rgba(63,63,70,0.5)]"
       />
       <motion.div
         aria-hidden="true"
         style={{ scaleY }}
-        className="fixed inset-y-0 right-0 z-[70] w-1.5 origin-bottom bg-zinc-400/70 shadow-[0_0_12px_rgba(161,161,170,0.35)]"
+        className="fixed inset-y-0 right-0 z-[70] w-1.5 origin-bottom bg-zinc-700/70 shadow-[0_0_12px_rgba(63,63,70,0.35)]"
       />
     </>
   );

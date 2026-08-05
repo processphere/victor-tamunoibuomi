@@ -12,6 +12,7 @@ export function AccordionSection({
   eyebrow,
   title,
   description,
+  descriptionAside,
   children,
 }: {
   id: string;
@@ -19,6 +20,7 @@ export function AccordionSection({
   eyebrow: string;
   title: string;
   description?: string;
+  descriptionAside?: React.ReactNode;
   children: React.ReactNode;
 }) {
   const [open, setOpen] = useState(false);
@@ -104,9 +106,12 @@ export function AccordionSection({
               className="px-1 pt-8 sm:px-2"
             >
               {description && (
-                <p className="mb-10 max-w-2xl text-lg leading-relaxed text-zinc-400">
-                  {description}
-                </p>
+                <div className="mb-10 flex flex-wrap items-start justify-between gap-4">
+                  <p className="max-w-2xl text-lg leading-relaxed text-zinc-400">
+                    {description}
+                  </p>
+                  {descriptionAside && <div>{descriptionAside}</div>}
+                </div>
               )}
               {children}
             </motion.div>

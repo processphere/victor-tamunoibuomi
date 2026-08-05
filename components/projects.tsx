@@ -20,6 +20,12 @@ export function Projects() {
       eyebrow="Projects"
       title="Selected work."
       description={content.sectionDescriptions.projects}
+      descriptionAside={
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 font-mono text-sm font-medium text-zinc-100">
+          <GitHubIcon className="h-4 w-4" />
+          Code on request
+        </span>
+      }
     >
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {content.projects.map((project, i) => {
