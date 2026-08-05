@@ -43,6 +43,15 @@ export function AccordionSection({
     return () => observer.disconnect();
   }, [autoOpened]);
 
+  useEffect(() => {
+    const onRequest = (e: Event) => {
+      const target = (e as CustomEvent<string>).detail;
+      if (target === id) setOpen(true);
+    };
+    window.addEventListener("vv:open-accordion", onRequest);
+    return () => window.removeEventListener("vv:open-accordion", onRequest);
+  }, [id]);
+
   return (
     <div id={id} ref={ref} className="mx-auto max-w-7xl scroll-mt-24 px-6 pt-14 pb-20">
       <button

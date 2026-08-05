@@ -21,6 +21,16 @@ export function Nav() {
 
   const close = () => setOpen(false);
 
+  const go = (href: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setOpen(false);
+    const id = href.replace("#", "");
+    window.dispatchEvent(new CustomEvent("vv:open-accordion", { detail: id }));
+    window.setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 120);
+  };
+
   const avatarClass = scrolled
     ? "h-11 w-11 rounded-full border border-white/10 bg-white object-cover ring-1 ring-accent/40 sm:h-12 sm:w-12"
     : "h-40 w-40 rounded-full border border-white/10 bg-white object-cover ring-2 ring-accent/40 sm:h-56 sm:w-56";
@@ -73,6 +83,7 @@ export function Nav() {
             <li key={link.href}>
               <a
                 href={link.href}
+                onClick={go(link.href)}
                 className="text-[13px] font-mono uppercase tracking-[0.15em] text-zinc-300 transition-colors hover:text-zinc-100"
               >
                 {link.label}
@@ -119,7 +130,7 @@ export function Nav() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={close}
+                    onClick={go(link.href)}
                     className="flex items-center justify-between border-b border-white/5 py-4 font-mono text-sm uppercase tracking-[0.15em] text-zinc-200 transition-colors hover:text-accent"
                   >
                     {link.label}

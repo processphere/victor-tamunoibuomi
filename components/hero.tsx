@@ -9,7 +9,6 @@ import {
   FocusIcon,
 } from "@/components/icons";
 import { HeroItem } from "@/components/anim/hero-enter";
-import { FilePanel } from "@/components/anim/file-panel";
 
 const socials = [
   { label: "GitHub", href: content.github, Icon: GitHubIcon },
@@ -26,8 +25,7 @@ export function Hero() {
         className="pointer-events-none absolute -top-40 left-1/2 h-[560px] w-[840px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(52,211,153,0.09),transparent_65%)]"
       />
       <div className="relative mx-auto flex min-h-svh max-w-7xl flex-col justify-center px-6 pb-24 pt-52 sm:pt-60 lg:pt-72">
-        <div className="grid items-center gap-14 lg:grid-cols-[1fr_auto]">
-          <HeroItem>
+        <HeroItem>
             <div>
               <p className="mb-6 font-mono text-sm text-zinc-400">
                 {content.role}
@@ -83,10 +81,6 @@ export function Hero() {
               </div>
             </div>
           </HeroItem>
-          <HeroItem delay={0.15} className="w-full">
-            <FilePanel />
-          </HeroItem>
-        </div>
 
         <HeroItem delay={0.2}>
           <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 md:grid-cols-4">
@@ -136,8 +130,6 @@ export function Hero() {
             </div>
           </div>
         </HeroItem>
-
-        <FilePanel />
       </div>
     </section>
   );

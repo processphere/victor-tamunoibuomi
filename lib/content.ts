@@ -57,24 +57,9 @@ export const content = {
       items: ["Node.js", "Express", "REST APIs", "PostgreSQL", "MongoDB"],
     },
     {
-      group: "Data & APIs",
-      icon: "database",
-      items: ["MongoDB", "PostgreSQL", "Redis", "REST", "GraphQL"],
-    },
-    {
       group: "Dev Tools",
       icon: "tools",
       items: ["Git / GitHub", "Vercel", "Postman", "Figma", "Linux"],
-    },
-    {
-      group: "Best Practices",
-      icon: "shield",
-      items: ["Responsive Design", "Accessibility", "SEO", "Performance"],
-    },
-    {
-      group: "Currently Exploring",
-      icon: "sparkles",
-      items: ["Real-time apps", "WebSockets", "Serverless", "Three.js"],
     },
   ],
 

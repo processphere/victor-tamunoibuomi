@@ -1,8 +1,29 @@
+"use client";
+
+import { motion, useReducedMotion } from "motion/react";
 import { content } from "@/lib/content";
 import { AccordionSection } from "@/components/accordion";
-import { skillIcons } from "@/components/icons";
+import { skillLogos } from "@/components/brand-icons";
+import { skillIcons, ArrowUpRightIcon } from "@/components/icons";
+
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+const container = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.09, delayChildren: 0.15 } },
+};
 
 export function Skills() {
+  const reduce = useReducedMotion();
+  const bullet = {
+    hidden: { opacity: 0, x: reduce ? 0 : -18 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5, ease: EASE },
+    },
+  };
+
   return (
     <AccordionSection
       id="skills"
@@ -11,7 +32,13 @@ export function Skills() {
       title="The stack I reach for every day."
       description={content.sectionDescriptions.skills}
     >
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, margin: "-80px" }}
+        className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+      >
         {content.skills.map((group) => {
           const Icon = skillIcons[group.icon] ?? skillIcons.tools;
           return (
@@ -29,22 +56,33 @@ export function Skills() {
               </div>
               <ul className="mt-6 space-y-3">
                 {group.items.map((item) => (
-                  <li
+                  <motion.li
                     key={item}
-                    className="flex items-center gap-3 text-base text-zinc-200"
+                    variants={bullet}
+                    className="flex items-center justify-between gap-3 text-base text-zinc-200"
                   >
-                    <span
-                      aria-hidden="true"
-                      className="h-1 w-1 rounded-full bg-accent/70"
-                    />
-                    {item}
-                  </li>
+                    <span className="flex items-center gap-3">
+                      {(() => {
+                        const Logo = skillLogos[item];
+                        return Logo ? (
+                          <Logo className="h-4 w-4 shrink-0 text-zinc-400 transition-colors group-hover:text-zinc-100" />
+                        ) : (
+                          <span
+                            aria-hidden="true"
+                            className="h-1 w-1 rounded-full bg-accent/70"
+                          />
+                        );
+                      })()}
+                      {item}
+                    </span>
+                    <ArrowUpRightIcon className="h-4 w-4 shrink-0 text-zinc-600 transition-colors group-hover:text-zinc-400" />
+                  </motion.li>
                 ))}
               </ul>
             </div>
           );
         })}
-      </div>
+      </motion.div>
     </AccordionSection>
   );
 }
