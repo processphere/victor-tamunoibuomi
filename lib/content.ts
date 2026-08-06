@@ -21,9 +21,6 @@ export const content = {
   // Hero portrait — used by the 3D circle in the hero.
   heroImage: "/images/hero-image.jpeg",
 
-  // Drop your photo at public/images/photo.png (square crop works best), then set:
-  photo: "/images/photo.png",
-
   status: "Available for new opportunities",
 
   // First-visit welcome quote (shown once per browser).
@@ -41,7 +38,7 @@ export const content = {
     projects:
       "A few things I've built recently. The rest is on GitHub.",
     experience:
-      "Where I&apos;ve learned and worked so far — replace these with your real roles.",
+      "The places I've learned, built, and shipped so far.",
     contact:
       "Have an idea, a project, or a role in mind? My inbox is always open.",
   },
@@ -93,13 +90,12 @@ export const content = {
       // gallery. One string per image (main image first), in order.
       captions: [],
       features: [
-        "Daily QR code generation per employee",
+        "Daily QR code generation per student",
         "QR check-in / check-out scanning",
-        "Employee onboarding and profiles",
+        "Student onboarding and profiles",
         "Attendance reports and exports",
       ],
       emoji: "01",
-      featured: true,
     },
     {
       title: "Hall Clone",
@@ -125,7 +121,6 @@ export const content = {
         "Push notifications",
       ],
       emoji: "02",
-      featured: true,
     },
     {
       title: "Deambrose Socials",
@@ -153,7 +148,6 @@ export const content = {
         "Transaction history and dispute management",
       ],
       emoji: "03",
-      featured: false,
     },
     {
       title: "Kalearnda",
@@ -172,7 +166,6 @@ export const content = {
       captions: [],
       features: [],
       emoji: "04",
-      featured: false,
     },
   ],
 
@@ -183,7 +176,7 @@ export const content = {
       period: "2025 — Present",
       type: "Work",
       description:
-        "replace.me — Add a short line about what you built, owned, or shipped at Harvoxx.",
+        "Build and ship production-ready web features end to end — React and Next.js frontends, clean component architecture, and the APIs behind them.",
       tech: ["React", "Next.js"],
       logo: "", // e.g. "/images/harvoxx-logo.png"
     },
@@ -193,7 +186,7 @@ export const content = {
       period: "2024 — 2025",
       type: "Work",
       description:
-        "replace.me — Add a short line about what you managed and built at TechTan.",
+        "Ran the engineering side of my own tech company — designed, built, and shipped the products the business runs on, including the attendance system, while managing delivery and the team.",
       tech: ["Node.js", "Express"],
       logo: "", // e.g. "/images/techtan-logo.png"
     },

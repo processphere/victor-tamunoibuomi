@@ -55,7 +55,7 @@ export function AccordionSection({
   }, [id]);
 
   return (
-    <div id={id} ref={ref} className="mx-auto max-w-7xl scroll-mt-24 px-6 pt-14 pb-20">
+    <div id={id} ref={ref} className="mx-auto max-w-7xl scroll-mt-24 px-4 pt-14 pb-20">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}

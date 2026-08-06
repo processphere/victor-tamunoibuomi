@@ -17,12 +17,30 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(content.siteUrl),
   title: `${content.name} — ${content.role}`,
-  description: content.tagline,
+  description: `${content.tagline} Based ${content.location}.`,
+  applicationName: content.name,
+  category: "Portfolio",
+  keywords: [
+    content.role.toLowerCase(),
+    "portfolio",
+    "web development",
+    "mobile development",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Node.js",
+  ],
+  authors: [{ name: content.name }],
+  creator: content.name,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: `${content.name} — ${content.role}`,
     description: content.tagline,
     url: content.siteUrl,
     siteName: content.name,
+    locale: "en_US",
     type: "website",
   },
   twitter: {
