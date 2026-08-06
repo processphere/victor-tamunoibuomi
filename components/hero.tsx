@@ -12,6 +12,7 @@ import { HeroItem } from "@/components/anim/hero-enter";
 import { GlowOverlay } from "@/components/anim/glow-overlay";
 import { FilePanel } from "@/components/anim/file-panel";
 import { HeroVisual } from "@/components/hero-visual";
+import { NameFX } from "@/components/anim/name-fx";
 
 const socials = [
   { label: "GitHub", href: content.github, Icon: GitHubIcon },
@@ -35,11 +36,7 @@ export function Hero() {
               <p className="mb-6 font-mono text-sm text-zinc-400">
                 {content.role}
               </p>
-              <h1 className="max-w-3xl text-5xl font-medium leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-                {content.name.split(" ")[0]}
-                <span className="text-zinc-400"> </span>
-                {content.name.split(" ").slice(1).join(" ")}
-              </h1>
+              <NameFX className="max-w-3xl text-5xl font-medium leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl" />
               <p className="mt-6 text-xl leading-relaxed text-zinc-300 lg:text-2xl">
                 {content.tagline}
               </p>

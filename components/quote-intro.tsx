@@ -82,9 +82,11 @@ export function QuoteIntro() {
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="mx-auto w-44 sm:w-52">
-              <HeroVisual />
-            </div>
+            {!reduce && (
+              <div className="mx-auto w-44 sm:w-52">
+                <HeroVisual />
+              </div>
+            )}
             <p className="mt-8 min-h-5 font-mono text-xs font-semibold uppercase tracking-[0.35em] text-accent">
               {reduce ? note : note.slice(0, typed)}
               {!reduce && (

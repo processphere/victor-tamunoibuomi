@@ -1,9 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Html, OrbitControls, useCursor } from "@react-three/drei";
-import { useReducedMotion } from "motion/react";
+import { useInView, useReducedMotion } from "motion/react";
 import * as THREE from "three";
 
 const ACCENT = "#34d399";
@@ -134,11 +134,14 @@ function GlobeScene() {
 
 export function Globe() {
   const reduce = useReducedMotion();
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { margin: "100px" });
   return (
-    <div className="h-full w-full cursor-grab active:cursor-grabbing">
+    <div ref={ref} className="h-full w-full cursor-grab active:cursor-grabbing">
       <Canvas
         camera={{ position: [0, 0, 4.3], fov: 45 }}
-        dpr={[1, 2]}
+        dpr={[1, 1.5]}
+        frameloop={inView ? "always" : "demand"}
         style={{ background: "transparent", touchAction: "none" }}
       >
         <ambientLight intensity={0.7} />
@@ -149,7 +152,7 @@ export function Globe() {
           minDistance={3}
           maxDistance={6}
           enableZoom
-          autoRotate={!reduce}
+          autoRotate={inView && !reduce}
           autoRotateSpeed={0.6}
         />
       </Canvas>

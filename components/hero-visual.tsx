@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float } from "@react-three/drei";
-import { useReducedMotion } from "motion/react";
+import { useInView, useReducedMotion } from "motion/react";
 import * as THREE from "three";
 import { content } from "@/lib/content";
 import {
@@ -25,18 +25,23 @@ function PortraitScene({
   const reduce = useReducedMotion();
   const group = useRef<THREE.Group>(null);
   const ring = useRef<THREE.Mesh>(null);
+  const lastFrame = useRef(0);
   const w = aspect >= 1 ? 4.3 * aspect : 4.3;
   const h = aspect >= 1 ? 4.3 : 4.3 / aspect;
 
   useFrame((state, delta) => {
-    if (group.current && !reduce) {
+    if (reduce) return;
+    const t = state.clock.elapsedTime;
+    if (t - lastFrame.current < 1 / 30) return;
+    lastFrame.current = t;
+    if (group.current) {
       const targetY = state.pointer.x * 0.25;
       const targetX = state.pointer.y * -0.2;
       const k = Math.min(1, delta * 4);
       group.current.rotation.y += (targetY - group.current.rotation.y) * k;
       group.current.rotation.x += (targetX - group.current.rotation.x) * k;
     }
-    if (ring.current && !reduce) {
+    if (ring.current) {
       ring.current.rotation.z += delta * 0.12;
     }
   });
@@ -81,6 +86,8 @@ function SceneLoader({ onError }: { onError: () => void }) {
 
 export function HeroVisual() {
   const [failed, setFailed] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { margin: "100px" });
 
   if (failed) {
     return (
@@ -91,11 +98,12 @@ export function HeroVisual() {
   }
 
   return (
-    <div className="relative ml-auto w-full max-w-[420px]">
+    <div ref={ref} className="relative ml-auto w-full max-w-[420px]">
       <div className="relative aspect-square w-full overflow-hidden rounded-full">
         <Canvas
             camera={{ position: [0, 0, 5], fov: 45 }}
-            dpr={[1, 2]}
+            dpr={[1, 1.5]}
+            frameloop={inView ? "always" : "demand"}
             style={{ background: "transparent" }}
           >
             <SceneLoader onError={() => setFailed(true)} />
