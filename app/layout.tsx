@@ -20,6 +20,12 @@ export const metadata: Metadata = {
   description: `${content.tagline} Based ${content.location}.`,
   applicationName: content.name,
   category: "Portfolio",
+  themeColor: "#0a0a0a",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    themeColor: "#0a0a0a",
+  },
   keywords: [
     content.role.toLowerCase(),
     "portfolio",
